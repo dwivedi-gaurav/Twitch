@@ -1,0 +1,25 @@
+{
+  "streams": [
+    {
+      "title": "first",
+      "description": "firstStream",
+      "key": "first key",
+      "userId": "117400620090863771182",
+      "id": 1
+    },
+    {
+      "title": "efbqkbf",
+      "description": "keqkfeq",
+      "key": "nqlneflqf",
+      "userId": "117400620098863771182",
+      "id": 2
+    },
+    {
+      "title": "third",
+      "description": "third",
+      "key": "thirdKey",
+      "userId": "117400620098863771172",
+      "id": 3
+    }
+  ]
+}
