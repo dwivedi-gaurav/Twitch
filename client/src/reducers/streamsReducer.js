@@ -4,7 +4,8 @@ import {
     CREATE_STREAM,
     EDIT_STREAM,
     DELETE_STREAM,
-    FETCH_STREAMS
+    FETCH_STREAMS,
+    FETCH_STREAM
 } from '../actions/types';
 
 const streamsReducer=(state={},action)=>{
@@ -12,7 +13,9 @@ const streamsReducer=(state={},action)=>{
         case CREATE_STREAM:
             return {...state,[action.payload.id]:action.payload}
         case FETCH_STREAMS:
-            return {...state,...action.payload}
+            return {...state,...action.payload};
+        case FETCH_STREAM:
+            return {...state,[action.payload.id]:action.payload};
         default:
             return state;
     }

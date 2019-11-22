@@ -8,7 +8,8 @@ import {
     CREATE_STREAM,
     EDIT_STREAM,
     DELETE_STREAM,
-    FETCH_STREAMS
+    FETCH_STREAMS,
+    FETCH_STREAM
 } from './types';
 
 export const signIn=(userId)=>{
@@ -44,4 +45,20 @@ export const fetchStreams=()=>{
     }
 }
 
+export const fetchStream=(id)=>{
+    return async (dispatch)=>{
+        const response=await axios.get(`http://localhost:3001/streams/${id}`);
+        dispatch({
+            type:FETCH_STREAM,
+            payload:response.data
+        });
+    }
+}
+
+export const editStream=(stream,id)=>{
+    return async (dispatch)=>{
+        await axios.patch(`http://localhost:3001/streams/${id}`,stream);
+        history.push('/');
+    }
+}
 
