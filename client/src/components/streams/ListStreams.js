@@ -14,7 +14,7 @@ class ListStreams extends React.Component{
                 <div className="item" key={stream.id}>
                     <div className="content">
                         {this.renderAdminButtons(stream)}
-                        <div className="header">{stream.title}</div>
+                        <Link to={`/stream/${stream.id}`}><div className="header">{stream.title}</div></Link>
                         {stream.description}
                     </div>
                 </div>
