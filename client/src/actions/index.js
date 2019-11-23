@@ -62,3 +62,14 @@ export const editStream=(stream,id)=>{
     }
 }
 
+export const deleteStream=(id)=>{
+    return async (dispatch)=>{
+        await axios.delete(`http://localhost:3001/streams/${id}`);
+        dispatch({
+            type:DELETE_STREAM,
+            payload:id
+        });
+        history.push('/');
+    }
+}
+

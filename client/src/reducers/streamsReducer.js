@@ -7,6 +7,7 @@ import {
     FETCH_STREAMS,
     FETCH_STREAM
 } from '../actions/types';
+import _ from 'lodash';
 
 const streamsReducer=(state={},action)=>{
     switch(action.type){
@@ -16,6 +17,8 @@ const streamsReducer=(state={},action)=>{
             return {...state,...action.payload};
         case FETCH_STREAM:
             return {...state,[action.payload.id]:action.payload};
+        case DELETE_STREAM:
+            return _.omit(state,action.payload);
         default:
             return state;
     }
